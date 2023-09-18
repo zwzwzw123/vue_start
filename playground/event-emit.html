@@ -9,10 +9,10 @@
 
 <body>
     <div id="app">
-        {{num}}
+       <p>{{num}}</p> 
         <!-- <app-header v-on:하위 컴포넌트에서 발생한 이벤트 이름="상위 컴포넌트의 매서드 이름"></app-header> -->
         <app-header v-on:pass="logText"></app-header>    
-        <app-content v-on:pass="addNumber"></app-content>
+        <app-content v-on:increase="addNumber"></app-content>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
@@ -28,7 +28,7 @@
             template:'<button v-on:click="addNum">add</button>',
             methods:{
                 addNum:function(){
-                    this.$emit('pass')
+                    this.$emit('increase')
                 }
             }
         }
